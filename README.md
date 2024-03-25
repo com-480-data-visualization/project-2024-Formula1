@@ -3,8 +3,8 @@
 | Student's name | SCIPER |
 | -------------- | ------ |
 |Arundhati Balasubramaniam |376347 |
-| Hans Kristian Bjørgo Kværum| |
-| | |
+| Hans Kristian Bjørgo Kværum| 381875|
+| Riccardo Lionetto| |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
