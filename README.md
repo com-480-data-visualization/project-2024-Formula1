@@ -2,8 +2,8 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-| | |
-| | |
+|Arundhati Balasubramaniam |376347 |
+| Hans Kristian Bjørgo Kværum| |
 | | |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
@@ -25,9 +25,13 @@ Please, fill the following sections about your project.
 
 ### Problematic
 
-> Frame the general topic of your visualization and the main axis that you want to develop.
-> - What am I trying to show with my visualization?
-> - Think of an overview for the project, your motivation, and the target audience.
+Initiated in 1950, Formula 1 racing stands as the pinnacle of motor racing competitions globally, renowned for its prestige and widespread popularity. The 2019 FIA Formula One World Championship unfolded from March to December, comprising 21 races held across four continents and spanning 21 countries, marking it as the foremost annual sporting series worldwide.
+
+While on the surface it may seem like a solo sport where the responsibility is solely on the driver, however, we see that it is, in fact, a textbook team sport.
+
+For this project, we aim to make F1 accessible to those with a novice to intermediate understanding of motor racing, but who require a more visual explanation to comprehend the intricacies of the sport. We will focus on visualizations that talk about not only the Driver’s statistics across the grand prix races, but also look at other factors like the shape of the circuit, car performance, rule changes, team performance as whole, and race calendars.
+
+More specifically, our research questions are as follows:
 
 ### Exploratory Data Analysis
 
