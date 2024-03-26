@@ -47,7 +47,7 @@ More specifically, our research aims to visualise the following questions:
 2. [This](https://f1-visualization.vercel.app) website, developed by Yannick Gloster, allows the user to see the race in an interesting dynamic visualisation, but does not provide much more information.
 3. [This](https://uxdesign.cc/visualizing-career-flows-in-sports-formula-1-3d88feca257c) visualisation is a static representation of the entire career of a particular team or a driver, designed by Ruban B.
 
-Our visualisation aims to be dynamic and interactive, while simultaneously guiding the user through the platform. We will talk about not only the driver or the team itself, but also the effect of the environment on their performance. In essence, we hope to differentiate ourselves by catering to a larger audience and guide them through the sport.
+Our visualisation aims to be dynamic and interactive, while simultaneously guiding the user through the platform. We will talk about not only the driver or the team itself, but also the effect of the environment on their performance. In essence, we hope to differentiate ourselves by catering to a larger audience and guide them through the sport. While not an entirely novel topic, the lack of data within this makes for an interesting visualisation for the more novice fans.
 
 ## Milestone 2 (26th April, 5pm)
 
