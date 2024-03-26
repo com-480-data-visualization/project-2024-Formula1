@@ -2,9 +2,9 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-|Arundhati Balasubramaniam |376347 |
-| Hans Kristian Bjørgo Kværum| 381875|
-| Riccardo Lionetto| |
+|Arundhati Balasubramaniam |376347|
+| Hans Kristian Bjørgo Kværum|381875|
+| Riccardo Lionetto|370934|
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
@@ -31,7 +31,11 @@ While on the surface it may seem like a solo sport where the responsibility is s
 
 For this project, we aim to make F1 accessible to those with a novice to intermediate understanding of motor racing, but who require a more visual explanation to comprehend the intricacies of the sport. We will focus on visualizations that talk about not only the Driver’s statistics across the grand prix races, but also look at other factors like the shape of the circuit, car performance, rule changes, team performance as whole, and race calendars.
 
-More specifically, our research questions are as follows:
+More specifically, our research aims to visualise the following questions:
+1. How does the shape and length of a circuit affect race outcomes? 
+2. Can we identify any trends related to specific circuit features (e.g., elevation changes, tight corners, long straights) and their impact on race results?
+3. How do individual drivers’ performance metrics (such as lap times, finishing positions, and fastest laps) vary across different circuits?
+4. Which drivers (or driver pairs) consistently perform well across various seasons, and how has their performance evolved over time?
 
 ### Exploratory Data Analysis
 
@@ -39,12 +43,11 @@ More specifically, our research questions are as follows:
 > - Show some basic statistics and get insights about the data
 
 ### Related work
+1. In [this website](https://jasonjpaul.squarespace.com/formula-1-data-vis), Jason Paul outlines his process for understanding who is the greatest driver of all time, with a unique storytelling approach which acts as a choose-your-own-adventure structure for the user to click through.
+2. [This](https://f1-visualization.vercel.app) website, developed by Yannick Gloster, allows the user to see the race in an interesting dynamic visualisation, but does not provide much more information.
+3. [This](https://uxdesign.cc/visualizing-career-flows-in-sports-formula-1-3d88feca257c) visualisation is a static representation of the entire career of a particular team or a driver.
 
-
-> - What others have already done with the data?
-> - Why is your approach original?
-> - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
-> - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
+Our visualisation aims to be dynamic and interactive, while simultaneously guiding the user through the platform. We will talk about not only the driver or the team itself, but also the effect of the environment on their performance. In essence, we hope to differentiate ourselves by catering to a larger audience and guide them through the sport.
 
 ## Milestone 2 (26th April, 5pm)
 
