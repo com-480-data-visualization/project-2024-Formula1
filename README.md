@@ -25,29 +25,29 @@ Please, fill the following sections about your project.
 
 ### Problematic
 
-Initiated in 1950, Formula 1 racing stands as the pinnacle of motor racing competitions globally, renowned for its prestige and widespread popularity. The 2019 FIA Formula One World Championship unfolded from March to December, comprising 21 races held across four continents and spanning 21 countries, marking it as the foremost annual sporting series worldwide.
+Initiated in 1950, Formula 1 stands as the pinnacle of motor sport, renowned for its prestige, widespread popularity and technical brilliance. Considered one of the most data-driven sports, modern Formula 1 cars have 300 sensors producing approximately 100,000 data points per second, accumulating [1.5 terabytes of data over the course of a race](https://www.forbes.com/sites/joelshapiro/2023/01/26/data-driven-at-200-mph-how-analytics-transforms-formula-one-racing/?sh=6f330cc639db). All this data is analyzed to inform everything from car design to racing strategy and driver skill.
 
-While on the surface it may seem like a solo sport where the responsibility is solely on the driver, however, we see that it is, in fact, a textbook team sport.
+For this project, we aim to make F1 accessible to those with a novice to intermediate understanding of motor racing, but who require a more visual explanation to comprehend the intricacies of the sport. We will focus on visualizations that talk about not only the Driver’s statistics across seasons and grand prix races, but also look at other factors like circuits, car performance, race calendars and point scoring-rules.
 
-For this project, we aim to make F1 accessible to those with a novice to intermediate understanding of motor racing, but who require a more visual explanation to comprehend the intricacies of the sport. We will focus on visualizations that talk about not only the Driver’s statistics across the grand prix races, but also look at other factors like the shape of the circuit, car performance, rule changes, team performance as whole, and race calendars.
-
-More specifically, our research aims to visualise the following questions:
-1. How does the shape and length of a circuit affect race outcomes? 
-2. Can we identify any trends related to specific circuit features (e.g., elevation changes, tight corners, long straights) and their impact on race results?
-3. How do individual drivers’ performance metrics (such as lap times, finishing positions, and fastest laps) vary across different circuits?
-4. Which drivers (or driver pairs) consistently perform well across various seasons, and how has their performance evolved over time?
+More specifically, our project aims to provide visualisations for exploring the following:
+1. How would a different point scoring system affect seasonal championship outcomes? 
+2. Driver and teammate battles - how are two or more drivers performing across races, qualifyings and seasons?
+3. Circuit statistics - how many races have been held at a specific circuit? Which driver has had the most success there (wins, podiums, pole positions)?
+5. GOAT-debate: who is the greatest driver of all time in pure numbers?
+6. Race calendar environmental impact - how could the race calendar be reorganized to minimize environmental impact/rac2race travel milage? 
 
 ### Exploratory Data Analysis
 
 > Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data
+> Show some basic statistics and get insights about the data
 
 ### Related work
 1. In [this website](https://jasonjpaul.squarespace.com/formula-1-data-vis), Jason Paul outlines his process for understanding who is the greatest driver of all time, with a unique storytelling approach which acts as a choose-your-own-adventure structure for the user to click through.
 2. [This](https://f1-visualization.vercel.app) website, developed by Yannick Gloster, allows the user to see the race in an interesting dynamic visualisation, but does not provide much more information.
 3. [This](https://uxdesign.cc/visualizing-career-flows-in-sports-formula-1-3d88feca257c) visualisation is a static representation of the entire career of a particular team or a driver, designed by Ruban B.
+4. [This](https://www.f1-tempo.com) website lets the user create simple Formula 1 lap time and telemetry graphs utlizing data from [Fast-F1](https://github.com/theOehrly/Fast-F1/tree/master).
 
-Our visualisation aims to be dynamic and interactive, while simultaneously guiding the user through the platform. We will talk about not only the driver or the team itself, but also the effect of the environment on their performance. In essence, we hope to differentiate ourselves by catering to a larger audience and guide them through the sport. While not an entirely novel topic, the lack of data within this makes for an interesting visualisation for the more novice fans.
+Our visualisation aims to be dynamic and interactive, while simultaneously guiding the user through the platform. While the visualisations should invite exploration, we also seek to present new insights regarding the impact(s) of point systems, race calendars and rule changes. While not an entirely novel topic, we aim to differentiate ourselves by bringing new perspectives through an interesting and interactive data story catering a broad audience.
 
 ## Milestone 2 (26th April, 5pm)
 
