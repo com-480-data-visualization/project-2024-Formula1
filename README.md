@@ -8,21 +8,18 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
-## Milestone 1 (29th March, 5pm)
+## Milestone 1
 
 ### Dataset
 
-We use a combination of datasets for this project:
-    1. **Fast-F1 library** is our primary dataset. 
-    It is important to notice that to access the data API must be used. Using the Ergast F1 endpoint, we can call the required data in JSON format or a flattened Pandas dataframe and save them in our server, considering that the Ergast API is deprecated and will shutdown by the end of 2024. Current functionalities were checked and the access is still fully working.
+**Fast-F1 library** is the selected dataset. To be specific, it is a python package providing access to a wide range of Formula 1 data including timing, results, schedules and telemetry. 
+It is important to note data access requires the use of an API. By utilizing the Ergast F1 endpoint, we can retrieve the required data in JSON format or as a flattened Pandas dataframe and store them in our server, to overcome the fact that the Ergast API is deprecated and will shutdown by the end of 2024. However, after thorough testing, it has been confirmed that functionalities are currently fully operational.
     
-    It consist of 13 main calls, including `get_race_schedule`, `get_seasons`, `get_qualifying_results`, `get_circuits` and `get_constructor_info` among others.
-
-    ![Fast F1 dataset description](fastf1.png)
-    Timing data, session information, car telemetry and position data are available from 2018 onwards. Schedule information and session results are available for older seasons as well, going back as far as 1950 (limited to data that is available through Ergast).
+It consist of 13 main calls, including `get_race_schedule`, `get_seasons`, `get_qualifying_results`, `get_circuits` and `get_constructor_info` among others. 
+![Overview over the available data](fastf1.png)
+Timing data, session information, car telemetry and position data are available from 2018 onwards. Schedule information and session results are available for older seasons as well, going back as far as 1950 (limited to data that is available through Ergast).
     
-    2. Our supplementary dataset is offered by 
-    
+[Formula 1 World Championship (1950 - 2023)](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020) is a Kaggle dataset that sourced data from Ergast (FastF1) and made it available to download. For this reason, this dataset will be prioritized for use, with data fetching from FastF1 only occurring when the desired data is unavailable in the Kaggle dataset.
 
 ### Problematic
 
@@ -38,6 +35,7 @@ More specifically, our project aims to provide visualisations for exploring the 
 5. How would a different point scoring system affect seasonal championship outcomes? 
 
 ### Exploratory Data Analysis
+Data pre-processing was made leveraging Python and is available in this [Jupiter Notebook](https://colab.research.google.com/drive/1LIcPUWiL35Zr-ITAFHjLXjy9uRplidLj?usp=sharing).
 
 > Pre-processing of the data set you chose
 > Show some basic statistics and get insights about the data
