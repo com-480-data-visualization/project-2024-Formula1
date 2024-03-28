@@ -19,7 +19,7 @@ In our exploratory notebook, we look into the distribution of data within the da
 *Here, we notice the incomplete data for 2023. To combat this lack of data, we pull telemetry data from the FastF1 API.*
 
 ![Drivers Per Season](/img/points_season.png)
-*Here, ee measure the seasonal length in days from the first race to the last. It's important to note that there is missing data for all races before 2005 in our dataset.*
+*Here, we measure the seasonal length in days from the first race to the last. It's important to note that there is missing data for all races before 2005 in our dataset.*
     
 [Formula 1 World Championship (1950 - 2023)](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020) is a Kaggle dataset that sourced data from Ergast (FastF1) and made it available to download. For this reason, this dataset will be prioritized for use, with data fetching from FastF1 only occurring when the desired data is unavailable in the Kaggle dataset.
 
