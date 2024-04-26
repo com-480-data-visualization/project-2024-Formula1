@@ -10,7 +10,13 @@
 <b>Milestone 1:</b> Proposal <br>
 In the folder [milestones](/milestones), the [proposal](/milestones/Milestone1.md) can be found in its markdown version together with a [Jupiter Notebook](/milestone1/exploratory_analysis-milestone-1.ipynb) containing the pre-processing scripts.
 
-<b>Milestone 2:</b> (26th April, 5pm)
+<b>Milestone 2:</b>
+- A high fidelity prototype was created on Figma using the official F1 assets: [link](https://www.figma.com/file/EpLRh5kheMZPoa5aNmziRT/COM-480-Formula1?type=design&node-id=0%3A1&mode=design&t=oXBu31xkjUssLWXJ-1). <br>
+- The milestone 2 document can be visualized inside its related folder: [link]().
+- The first skeleton of the website can be visualized here: [link]().
+
+The Figma prototype will be used as foundation and reference for the final website. The plots were generated using 'Plotly' and screenshots were inserted as placeholders in the website skeleton to help better format the future experience.
+
 
 <b>Milestone 3:</b> (31st May, 5pm)
 
