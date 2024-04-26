@@ -13,7 +13,7 @@ In the folder [milestones](/Milestones), the [proposal](/Milestones/milestone1/M
 <b>Milestone 2:</b>
 - A high fidelity prototype was created on Figma using the official F1 assets: [link](https://www.figma.com/file/EpLRh5kheMZPoa5aNmziRT/COM-480-Formula1?type=design&node-id=0%3A1&mode=design&t=oXBu31xkjUssLWXJ-1). <br>
 - The milestone 2 document can be visualized inside its related folder: [link](/Milestones/milestone2/Milestone2.pdf).
-- The first live skeleton of the website can be visualized here: [link](). Whilst its code in its related folder: [link](/Milestones/milestone2/website/)
+- The first live skeleton of the website can be visualized here: [link](https://formula1viz.altervista.org/index.html). Whilst its code in its related folder: [link](/Milestones/milestone2/website/)
 
 The Figma prototype will be used as foundation and reference for the final website. The plots were generated using 'Plotly' and screenshots were inserted as placeholders in the website skeleton to help better format the future experience.
 An additional file containing the code used to generate the plot was uploaded too: [folder](/Milestones/milestone2/milestone2-dataprep.ipynb)  
