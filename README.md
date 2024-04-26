@@ -16,7 +16,7 @@ In the folder [milestones](/Milestones), the [proposal](/Milestones/milestone1/M
 - The first live skeleton of the website can be visualized here: [link](). Whilst its code in its related folder: [link](/Milestones/milestone2/website/)
 
 The Figma prototype will be used as foundation and reference for the final website. The plots were generated using 'Plotly' and screenshots were inserted as placeholders in the website skeleton to help better format the future experience.
-An additional file containing the code used to generate the plot was uploaded too: [folder](/Milestones/milestone2/dataprep.ipynb)  
+An additional file containing the code used to generate the plot was uploaded too: [folder](/Milestones/milestone2/milestone2-dataprep.ipynb)  
 
 
 <b>Milestone 3:</b> (31st May, 5pm)
