@@ -1,0 +1,668 @@
+[
+    {
+        "year":1950,
+        "Africa":null,
+        "Asia":null,
+        "Europe":6.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1951,
+        "Africa":null,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1952,
+        "Africa":null,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1953,
+        "Africa":null,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1954,
+        "Africa":null,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1955,
+        "Africa":null,
+        "Asia":null,
+        "Europe":5.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1956,
+        "Africa":null,
+        "Asia":null,
+        "Europe":6.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1957,
+        "Africa":null,
+        "Asia":null,
+        "Europe":6.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1958,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":8.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1959,
+        "Africa":null,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1960,
+        "Africa":null,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1961,
+        "Africa":null,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1962,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1963,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1964,
+        "Africa":null,
+        "Asia":null,
+        "Europe":8.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1965,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1966,
+        "Africa":null,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1967,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1968,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":8.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1969,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":7.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1970,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":9.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1971,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":8.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":1972,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":8.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1973,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":10.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":2.0
+    },
+    {
+        "year":1974,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":10.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":2.0
+    },
+    {
+        "year":1975,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":10.0,
+        "North America":1.0,
+        "Oceania":null,
+        "South America":2.0
+    },
+    {
+        "year":1976,
+        "Africa":1.0,
+        "Asia":1.0,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1977,
+        "Africa":1.0,
+        "Asia":1.0,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":2.0
+    },
+    {
+        "year":1978,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":2.0
+    },
+    {
+        "year":1979,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":9.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":2.0
+    },
+    {
+        "year":1980,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":8.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":2.0
+    },
+    {
+        "year":1981,
+        "Africa":null,
+        "Asia":null,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":2.0
+    },
+    {
+        "year":1982,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":10.0,
+        "North America":4.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1983,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1984,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":11.0,
+        "North America":3.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":1985,
+        "Africa":1.0,
+        "Asia":null,
+        "Europe":11.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1986,
+        "Africa":null,
+        "Asia":null,
+        "Europe":11.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1987,
+        "Africa":null,
+        "Asia":1.0,
+        "Europe":11.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1988,
+        "Africa":null,
+        "Asia":1.0,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1989,
+        "Africa":null,
+        "Asia":1.0,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1990,
+        "Africa":null,
+        "Asia":1.0,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1991,
+        "Africa":null,
+        "Asia":1.0,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1992,
+        "Africa":1.0,
+        "Asia":1.0,
+        "Europe":10.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1993,
+        "Africa":1.0,
+        "Asia":1.0,
+        "Europe":11.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1994,
+        "Africa":null,
+        "Asia":2.0,
+        "Europe":11.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":1995,
+        "Africa":null,
+        "Asia":2.0,
+        "Europe":11.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":2.0
+    },
+    {
+        "year":1996,
+        "Africa":null,
+        "Asia":1.0,
+        "Europe":11.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":2.0
+    },
+    {
+        "year":1997,
+        "Africa":null,
+        "Asia":1.0,
+        "Europe":12.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":2.0
+    },
+    {
+        "year":1998,
+        "Africa":null,
+        "Asia":1.0,
+        "Europe":11.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":2.0
+    },
+    {
+        "year":1999,
+        "Africa":null,
+        "Asia":2.0,
+        "Europe":11.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2000,
+        "Africa":null,
+        "Asia":2.0,
+        "Europe":11.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2001,
+        "Africa":null,
+        "Asia":2.0,
+        "Europe":11.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2002,
+        "Africa":null,
+        "Asia":2.0,
+        "Europe":11.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2003,
+        "Africa":null,
+        "Asia":2.0,
+        "Europe":10.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2004,
+        "Africa":null,
+        "Asia":4.0,
+        "Europe":10.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2005,
+        "Africa":null,
+        "Asia":5.0,
+        "Europe":10.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2006,
+        "Africa":null,
+        "Asia":5.0,
+        "Europe":9.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2007,
+        "Africa":null,
+        "Asia":5.0,
+        "Europe":8.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2008,
+        "Africa":null,
+        "Asia":6.0,
+        "Europe":9.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2009,
+        "Africa":null,
+        "Asia":7.0,
+        "Europe":8.0,
+        "North America":null,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2010,
+        "Africa":null,
+        "Asia":8.0,
+        "Europe":8.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2011,
+        "Africa":null,
+        "Asia":8.0,
+        "Europe":8.0,
+        "North America":1.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2012,
+        "Africa":null,
+        "Asia":8.0,
+        "Europe":8.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2013,
+        "Africa":null,
+        "Asia":8.0,
+        "Europe":7.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2014,
+        "Africa":null,
+        "Asia":6.0,
+        "Europe":9.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2015,
+        "Africa":null,
+        "Asia":6.0,
+        "Europe":8.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2016,
+        "Africa":null,
+        "Asia":7.0,
+        "Europe":9.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2017,
+        "Africa":null,
+        "Asia":7.0,
+        "Europe":8.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2018,
+        "Africa":null,
+        "Asia":6.0,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2019,
+        "Africa":null,
+        "Asia":6.0,
+        "Europe":10.0,
+        "North America":3.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2020,
+        "Africa":null,
+        "Asia":4.0,
+        "Europe":13.0,
+        "North America":null,
+        "Oceania":null,
+        "South America":null
+    },
+    {
+        "year":2021,
+        "Africa":null,
+        "Asia":6.0,
+        "Europe":13.0,
+        "North America":2.0,
+        "Oceania":null,
+        "South America":1.0
+    },
+    {
+        "year":2022,
+        "Africa":null,
+        "Asia":6.0,
+        "Europe":10.0,
+        "North America":4.0,
+        "Oceania":1.0,
+        "South America":1.0
+    },
+    {
+        "year":2023,
+        "Africa":null,
+        "Asia":3.0,
+        "Europe":6.0,
+        "North America":2.0,
+        "Oceania":1.0,
+        "South America":null
+    }
+]
