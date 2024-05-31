@@ -24,5 +24,5 @@ An additional file containing the code used to generate the plot was uploaded to
 
 <b>Milestone 3:</b>
 - A screencast shows live interactions with the visualizations: [video](https://youtu.be/LU74x0ziPXs)
-- A process book shows the design process moving from ideas to sketches, and from a high fidelity prototype to a final web version: [process book]()
+- A process book shows the design process moving from ideas to sketches, and from a high fidelity prototype to a final web version: [process book](/Milestones/milestone3/Formula1_ProcessBook.pdf)
 - The final live prototype can be found at this link: [website](https://formula1viz.altervista.org/index.html)
