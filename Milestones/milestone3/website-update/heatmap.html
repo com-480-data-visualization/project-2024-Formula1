@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>F1 Championship Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>F1 Championship Visualization</h1>
+    <div id="controls">
+        Year: 
+        <select id="year-select"></select>
+        Championship: 
+        <select id="championship-select">
+            <option value="drivers">Drivers</option>
+            <option value="constructors">Constructors</option>
+        </select>
+        Points System: 
+        <select id="points-system-select"></select>
+    </div>
+    <div id="top-3-container" class="top-3-container"></div>
+    <div id="linechart-container"></div>
+    <div id="heatmap-container"></div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="js/heatMap.js"></script>
+</body>
+</html>

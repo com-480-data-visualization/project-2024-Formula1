@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart Race</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+        .chart-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #2d2d2d;
+        }
+        .dropdown {
+            margin: 20px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="dropdown">
+            <label for="data-select">Choose Data:</label>
+            <select id="data-select">
+                <option value="drivers">Drivers</option>
+                <option value="teams">Teams</option>
+            </select>
+
+            <label for="metric-select">Choose Metric:</label>
+            <select id="metric-select">
+                <option value="cumulative_points">Points</option>
+                <option value="cumulative_races">Races</option>
+                <option value="cumulative_poles">Poles</option>
+                <option value="cumulative_wins">Wins</option>
+                <option value="cumulative_podiums">Podiums</option>
+                <option value="cumulative_dnfs">DNFs</option>
+                <option value="championships">Championships</option>
+                <!-- Add more metrics as needed -->
+            </select>
+        </div>
+        <svg width="1080" height="600"></svg>
+    </div>
+
+    <script src="js/barRace.js"></script>
+</body>
+</html>

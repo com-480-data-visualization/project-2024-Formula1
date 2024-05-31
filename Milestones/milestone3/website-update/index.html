@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COM-480 Beyond the Lap</title>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="home" class="header-background">
+        <!-- Content overlaying the header background -->
+        <div class="header-content">
+            <!-- <h1 class="h3-acce</div>nt">COM-480</h1> -->
+            <h1 class="h1-accent" style="margin-top: 3vw;">BEYOND &nbsp; THE &nbsp; LAP </h1>
+        </div>
+        <div>
+            <img src="img/Front_Low_LH_v001.png" alt="Mercedes W15 Championship Contender F1 2024" class="img-cover" style="margin-top: -5vw;">
+        </div>
+    </header>
+
+    <section id="intro" class = "container">
+        <h1>Novel Perspectives on Formula 1</h1>
+        <p>Initiated in 1950, Formula 1 stands as the pinnacle of motor sport, renowned for its prestige, widespread popularity and technical brilliance. Considered one of the most data-driven sports, modern Formula 1 cars have 300 sensors producing approximately 100,000 data points per second, accumulating
+            <a href="https://www.forbes.com/sites/joelshapiro/2023/01/26/data-driven-at-200-mph-how-analytics-transforms-formula-one-racing/?sh=6f330cc639db" target="_blank">1.5 terabytes of data over the course of a race</a>.
+            All this data is analyzed to inform everything from car design to racing strategy.
+        </p>
+        </p>
+        <p>We aim to make F1 accessible to those with a novice to intermediate understanding of motor racing, who require a visual explanation to comprehend the intricacies of the sport. We will focus on visualizations that talk about not only the Driver’s statistics across seasons and grand prix races, but also look at other factors like circuits, tire strategies and point-systems.</p>
+        <!-- More content here -->
+    </section >
+    
+    <section id="intro" class = "container">
+        <div class="text-wrapper">
+            <h2>Understanding F1's History</h2>
+            <p>Since its inception in 1950, Formula 1 has undergone significant transformations, each shaped by technological advancements, regulatory changes, and shifting global influences. This section delves into the rich history of F1, highlighting key developments and trends over the decades. Use the dropdowns below, to see drivers and teams race for Formula 1 records!</p>
+        </div>
+        <div>
+            <h3>Most Successful Drivers & Teams</h3>
+        </div>
+        <div class="chart-container">
+            <div class="dropdown">
+                <label for="data-select">Choose Data:</label>
+                <select id="data-select">
+                    <option value="drivers">Drivers</option>
+                    <option value="teams">Teams</option>
+                </select>
+                
+                <label for="metric-select">Choose Metric:</label>
+                <select id="metric-select">
+                    <option value="cumulative_points">Points</option>
+                    <option value="cumulative_races">Races</option>
+                    <option value="cumulative_poles">Poles</option>
+                    <option value="cumulative_wins">Wins</option>
+                    <option value="cumulative_podiums">Podiums</option>
+                    <option value="cumulative_dnfs">DNFs</option>
+                    <option value="championships">Championships</option>
+                    <!-- Add more metrics as needed -->
+                </select>
+            </div>
+            <svg id="racing-bar-chart" width="1100" height="600"></svg>
+            <script src="js/barRace.js"></script>
+        </div>
+        <div>
+            <div class="text-wrapper">
+                <h3>Global Presence</h3>
+                <p>Even though F1 is considered a global motorsports racing series, over 60% of the races have historically been held in Europe. But how much of this can be attributed to previous seasons? Have a look for yourself! Beneath, you see a bubble map showcasing the circuits Formula 1 have raced at. The size represents the number of races and you can hover over a bubble to see when F1 raced there!</p>
+            </div>
+            <div class="text-wrapper">
+                <div id="map"></div>
+                <h4>Total Races per Continent</h4>
+                <div id="bar-chart"></div>
+                <h4>Historic Race Split by Continent</h4>
+                <div id="area-chart"></div>
+                <script src="js/bubbleMap.js"></script>
+            </div>
+            <div class="text-wrapper">
+                <p>From the above plots, we observe that the number of races in Europa have been fairly consistent throughout the sport's history. However, we also see that F1 has not raced in Africa since 1993. In the 2000s, Asia has gradually taken up more race spots, much thanks to races in the Middle-East, Malaysia, China and Japan. North America has also been consistently represented on the calendar, much thanks to races in the US and Canada, while Brazil, Argentina and Mexico has brought F1 to South-America on multiple occasions.</p>
+            </div>
+    </section>
+    
+    <section class="container">
+        <div class="text-wrapper">
+            <h2>Impact of F1s Point System</h2>
+            <p>The points scoring system of F1 is used for each Grand Prix held over the course of season to determine the outcome of two annual championships, one for drivers and one for constructors (teams). Each driver accumulates points individually for the WDC and collectively for its team for the WCC. However, while the general structure of the championship have remained, the systems distributing points at each Grand Prix has changed 7 times.</p>
+            <p>Currently, only the top 10 drivers of each race are awarded points for their efforts. Thus, there are minimal practical differences between finishing 11th vs. 20th. Thus, we ask ourselves: how would championship outcomes differ under alternative point scoring systems?</p>
+        </div>
+        <div class="points-wrapper">
+            <div id="controls" class="points-controls">
+                <p>Year:</p>
+                <select id="year-select" class="flat-select"></select>
+                <p>Championship:</p>
+                <select id="championship-select">
+                    <option value="drivers">Drivers</option>
+                    <option value="constructors">Constructors</option>
+                </select>
+                <p>Points System:</p>
+                <select id="points-system-select"></select>
+            </div>
+            <div>
+                <div id="top-3-container" class="top-3-container"></div>
+                <div id="linechart-container"></div>
+            </div>
+        </div>
+        <div id="heatmap-container"></div>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="js/heatMap.js"></script>
+    </section>
+
+    <section class="container">
+        <div class="text-wrapper">
+            <h2>Race Calendars & Travel</h2>
+            <p>An extensive report into F1’s environmental impact revealed the championship was responsible for generating 256,000 tonnes of CO2 emissions during the 2019 season. The same year, Formula 1 announced its commitment to be Net-Zero Carbon by 2030 as part of their wider Sustainability Strategy. In the same report, travel & logistics contributed to 72.7% of F1s carbon footprint in 2019. Thus, there are huge opportunities to cut emissions through reduction in travel. Only by reorganizing the race calendar of each year, we were able to reduce race-to-race travel milage significantly (almost 60% for 2022).</p>
+        </div>
+        <div id="header-container">
+            <div id="metrics-container">
+                <div id="year-container">
+                    <label for="year">Select Year:</label>
+                        <!-- Options will be populated by JavaScript -->
+                    <select id="year"></select>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Original Calendar</div>
+                    <div id="original-distance" class="metric-value">116 138 km</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Revised Calendar</div>
+                    <div id="revised-distance" class="metric-value">52 248 km</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Delta</div>
+                    <div id="delta" class="metric-value">-55%</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Reduced CO2</div>
+                    <div id="reduced-co2" class="metric-value">16.3 ton</div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="map"></div> -->
+        <div id="main-container">
+            <div id="map-container">
+                <div id="race-calendar-map"></div>
+            </div>
+            <div id="calendar-table-container"></div>
+        </div>
+        <script src="js/raceCalendar.js"></script>
+    </section>
+</body>
+</html>
