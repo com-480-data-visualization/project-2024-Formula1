@@ -44,23 +44,26 @@
         </div>
         <div class="chart-container">
             <div class="dropdown">
-                <label for="data-select">Choose Data:</label>
-                <select id="data-select">
-                    <option value="drivers">Drivers</option>
-                    <option value="teams">Teams</option>
-                </select>
-                
-                <label for="metric-select">Choose Metric:</label>
-                <select id="metric-select">
-                    <option value="cumulative_points">Points</option>
-                    <option value="cumulative_races">Races</option>
-                    <option value="cumulative_poles">Poles</option>
-                    <option value="cumulative_wins">Wins</option>
-                    <option value="cumulative_podiums">Podiums</option>
-                    <option value="cumulative_dnfs">DNFs</option>
-                    <option value="championships">Championships</option>
-                    <!-- Add more metrics as needed -->
-                </select>
+                <div class="select-wrapper">    
+                    <label for="data-select">Choose Data:</label>
+                    <select id="data-select">
+                        <option value="drivers">Drivers</option>
+                        <option value="teams">Teams</option>
+                    </select>
+                </div>
+                <div class="select-wrapper">
+                    <label for="metric-select">Choose Metric:</label>
+                    <select id="metric-select">
+                        <option value="cumulative_points">Points</option>
+                        <option value="cumulative_races">Races</option>
+                        <option value="cumulative_poles">Poles</option>
+                        <option value="cumulative_wins">Wins</option>
+                        <option value="cumulative_podiums">Podiums</option>
+                        <option value="cumulative_dnfs">DNFs</option>
+                        <option value="championships">Championships</option>
+                        <!-- Add more metrics as needed -->
+                    </select>
+                </div>
             </div>
             <svg id="racing-bar-chart" width="1100" height="600"></svg>
             <script src="js/barRace.js"></script>
