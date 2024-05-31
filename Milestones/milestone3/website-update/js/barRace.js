@@ -1,5 +1,5 @@
 const svg = d3.select("#racing-bar-chart");
-const margin = {top: 20, right: 0, bottom: 40, left: 0}; // Increased left margin for better label placement
+const margin = {top: 20, right: 0, bottom: 40, left: 10};
 const width = +svg.attr("width") - margin.left - margin.right;
 const height = +svg.attr("height") - margin.top - margin.bottom;
 const gBarChart = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
@@ -191,6 +191,11 @@ function render(data, metric) {
 
         const bars = gBarChart.selectAll(".bar")
             .data(yearData, d => d.name);
+        
+                    // Change gridline color to dark gray
+        gBarChart.selectAll(".tick line")
+            .attr('class', 'vertical')
+            // .style("class", "#333333"); // Set the stroke color to dark gray
 
         bars.enter()
             .append("rect")

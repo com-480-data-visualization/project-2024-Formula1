@@ -125,7 +125,7 @@ function renderHeatmap(data, pointsSystem, championship, roundMetadata) {
         return a - b;
     });
 
-    const margin = { top: 50, right: 0, bottom: 50, left: 130};
+    const margin = { top: 0, right: 0, bottom: 50, left: 130};
     const width = 1100 - margin.left - margin.right;
     const height = Math.max(600, entities.length * 20) - margin.top - margin.bottom;
 
@@ -298,7 +298,7 @@ function renderLineChart(data, pointsSystem, championship, roundMetadata) {
         return a - b;
     });
 
-    const lineChartMargin = { top: 50, right: 0, bottom: 50, left: 50 };
+    const lineChartMargin = { top: 0, right: 10, bottom: 50, left: 50 };
     const lineChartWidth = 900 - lineChartMargin.left - lineChartMargin.right;
     const lineChartHeight = 300 - lineChartMargin.top - lineChartMargin.bottom;
 
@@ -311,6 +311,27 @@ function renderLineChart(data, pointsSystem, championship, roundMetadata) {
     const xLine = d3.scaleLinear().domain([1, d3.max(rounds.filter(r => r !== 'Total'))]).range([0, lineChartWidth]);
     const yLine = d3.scaleLinear().domain([0, d3.max(Object.values(totalPoints))]).range([lineChartHeight, 0]);
     const colorLine = d3.scaleOrdinal(d3.schemeCategory10).domain(entities);
+
+    // Add X gridlines
+    svgLine.append('g')
+        .attr('class', 'grid')
+        .attr('transform', `translate(0, ${lineChartHeight})`)
+        .call(d3.axisBottom(xLine)
+            .ticks(rounds.length - 1)
+            .tickSize(-lineChartHeight)
+            .tickFormat(''))
+        .selectAll("line")
+        .attr("class", "vertical");
+
+    // Add Y gridlines
+    svgLine.append('g')
+        .attr('class', 'grid')
+        .call(d3.axisLeft(yLine)
+            .ticks(5)
+            .tickSize(-lineChartWidth)
+            .tickFormat(''))
+        .selectAll("line")
+        .attr("class", "vertical");
 
     svgLine.append('g')
         .attr('transform', `translate(0, ${lineChartHeight})`)
@@ -452,14 +473,17 @@ function updateTop3(data, pointsSystem, championship) {
     const top3Container = d3.select('#top-3-container');
     top3Container.selectAll('.top-3').remove();
 
+    const labels = ['1st', '2nd', '3rd'];
+    
     sortedEntities.forEach((entity, index) => {
         top3Container.append('div')
             .attr('class', 'top-3')
             .style('display', 'flex')
             .style('flex-direction', 'column')
             .style('align-items', 'left')
-            .style('margin', '0 20px')
-            .html(`<div class="points">${totalPoints[entity]} pts</div>
-                   <div style="opacity: 0.6">${entity}</div>`);
+            .style('margin', '0 0px')
+            .html(`<div style="opacity: 0.6">${labels[index]}</div>
+                   <div class="points">${totalPoints[entity]} pts</div>
+                   <div class="name-label">${entity}</div>`);
     });
 }

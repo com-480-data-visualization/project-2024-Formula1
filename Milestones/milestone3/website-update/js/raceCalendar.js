@@ -21,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error loading data:', error));
 });
 
-
-
 function populateYearSelect(data) {
     const yearSelect = document.getElementById('year');
     const years = Object.keys(data).sort((a, b) => b - a);  // Sort years in descending order
@@ -62,7 +60,7 @@ function updateMap(data) {
 
     const g = svg.append('g');
 
-    const projection = d3.geoEquirectangular().scale(300).translate([width / 2-100, height / 2+100]);
+    const projection = d3.geoEquirectangular().scale(300).translate([width / 2 - 100, height / 2 + 100]);
     const path = d3.geoPath().projection(projection);
 
     // Define arrow markers for the paths
@@ -105,11 +103,7 @@ function updateMap(data) {
         drawCircuits(g, yearData.nodes, projection);
         drawCircuitLabels(g, yearData.nodes, projection);
         // Update calendars
-        // updateCalendar('original-list', yearData.originalPath, yearData.nodes);
-        // updateCalendar('revised-list', yearData.revisedPath, yearData.nodes);
-        // Example usage:
-        // Assuming you have your originalPath, revisedPath, and nodes data ready.
-        updateCalendarTable('calendar-table-container', yearData.originalPath, yearData.revisedPath, yearData.nodes)
+        updateCalendarTable('calendar-table-container', yearData.originalPath, yearData.revisedPath, yearData.nodes, yearData.originalEdges, yearData.revisedEdges, projection, g);
 
     }).catch(error => console.error('Error loading map data:', error));
 
@@ -126,6 +120,8 @@ function updateMap(data) {
     });
 
     svg.call(zoom);
+
+    applyZoom(svg);
 }
 
 function updateHeader(data) {
@@ -140,8 +136,8 @@ function updateHeader(data) {
 
     const originalDistance = yearData.originalTotalDistance;
     const revisedDistance = yearData.revisedTotalDistance;
-    const co2Assumption = 0.09; // Example value for CO2 emission per km
-    const teamMembers = 50; // Example value for the number of staff members per team per race
+    const co2Assumption = 0.115; // Assumption from this (115g/km per passenger): https://www.carbonindependent.org/22.html
+    const teamMembers = 75; // Assumption from this: https://us.motorsport.com/f1/news/insiders-guide-f1-team-who-does-what/8025043/
 
     const delta = (revisedDistance / originalDistance - 1).toFixed(2);
     const co2 = (delta * originalDistance * co2Assumption * teamMembers).toFixed(1);
@@ -149,7 +145,7 @@ function updateHeader(data) {
     document.getElementById('original-distance').textContent = `${Math.round(originalDistance).toLocaleString()} km`;
     document.getElementById('revised-distance').textContent = `${Math.round(revisedDistance).toLocaleString()} km`;
     document.getElementById('delta').textContent = `${(delta * 100).toFixed(1)}%`;
-    document.getElementById('reduced-co2').textContent = `${Math.round(co2).toLocaleString()} ton`;
+    document.getElementById('reduced-co2').textContent = `${Math.round(co2).toLocaleString()} tons`;
 }
 
 function drawCurvedPaths(g, edges, projection, type, nodes, coord2CircuitRef) {
@@ -175,6 +171,10 @@ function drawCurvedPaths(g, edges, projection, type, nodes, coord2CircuitRef) {
         .enter()
         .append('g')
         .attr('class', type)
+        .attr('data-lat1', d => d.coordinates[0][1])
+        .attr('data-lng1', d => d.coordinates[0][0])
+        .attr('data-lat2', d => d.coordinates[1][1])
+        .attr('data-lng2', d => d.coordinates[1][0])
         .each(function(d) {
             // Append an invisible path for easier hover
             d3.select(this)
@@ -189,14 +189,16 @@ function drawCurvedPaths(g, edges, projection, type, nodes, coord2CircuitRef) {
                         .style('opacity', 0.3);
                     g.selectAll(`.${type} path.visible-path`).style('stroke', hoverColor);
                     g.selectAll(`.${type} .distance-label`).style('display', 'block');
-                    g.selectAll('.circuit-label').style('opacity', 0.2)
+                    g.selectAll('.circuit-label').style('opacity', 0.2);
+                    g.selectAll('.circuit').style('opacity', 0.2); // Add this line
                 })
                 .on('mouseout', function() {
                     g.selectAll(`.${type === 'original' ? 'revised' : 'original'}`)
                         .style('opacity', 1);
                     g.selectAll(`.${type} path.visible-path`).style('stroke', color);
                     g.selectAll(`.${type} .distance-label`).style('display', 'none');
-                    g.selectAll('.circuit-label').style('opacity', 1)
+                    g.selectAll('.circuit-label').style('opacity', 1);
+                    g.selectAll('.circuit').style('opacity', 1); // Add this line
                 });
 
             // Append the visible path
@@ -237,7 +239,13 @@ function drawCircuits(g, nodes, projection) {
         .attr('r', 3)
         .attr('class', 'circuit')
         .style('fill', 'white')
-        .style('stroke', 'none');
+        .style('stroke', 'none')
+        .on('mouseover', function() {
+            d3.select(this).style('opacity', 1);  // Highlight the circuit
+        })
+        .on('mouseout', function() {
+            d3.select(this).style('opacity', 1);  // Reset highlight
+        });
 }
 
 function drawCircuitLabels(g, nodes, projection) {
@@ -254,7 +262,7 @@ function drawCircuitLabels(g, nodes, projection) {
         .style('font-size', '10px')
         .style('fill', 'white')
         .style('text-anchor', 'middle')
-        .text(d => d.location);
+        .text(d => d.location)
 }
 
 function highlightOrigin(g, nodes, originalOrigin, revisedOrigin, projection) {
@@ -283,23 +291,6 @@ function highlightOrigin(g, nodes, originalOrigin, revisedOrigin, projection) {
         .style('opacity', 0.5);
 }
 
-// function updateCalendar(listId, path, nodes) {
-//     const list = document.getElementById(listId);
-//     list.innerHTML = '';  // Clear existing list
-//     path.forEach((circuitRef, index) => {
-//         const row = document.createElement('div');
-//         row.className = 'calendar-row';
-//         row.innerHTML = `
-//             <div class="calendar-order">${index + 1}.</div>
-//             <div class="calendar-cell">
-//                 <div class="calendar-continent" style="background-color: ${getContinentColor(nodes[circuitRef].continent)} width=10px height=100%"></div>
-//                 <div class="calendar-country">${nodes[circuitRef].country}</div>
-//             </div>
-//         `;
-//         list.appendChild(row);
-//     });
-// }
-
 function parseData(rawData) {
     // Transform the array of year data into an object keyed by year
     const data = {};
@@ -309,17 +300,16 @@ function parseData(rawData) {
     return data;
 }
 
-function updateCalendarTable(containerId, originalPath, revisedPath, nodes) {
+function updateCalendarTable(containerId, originalPath, revisedPath, nodes, originalEdges, revisedEdges, projection, g) {
     // Remove existing tables
     d3.selectAll('.calendar-table').remove();
 
     const container = document.getElementById(containerId);
-    const table = generateTable(originalPath, revisedPath, nodes);
+    const table = generateTable(originalPath, revisedPath, nodes, originalEdges, revisedEdges, projection, g);
     container.appendChild(table);
 }
 
-
-function generateTable(originalPath, revisedPath, nodes) {
+function generateTable(originalPath, revisedPath, nodes, originalEdges, revisedEdges, projection, g) {
     const table = document.createElement('table');
     table.className = 'calendar-table';
 
@@ -385,6 +375,29 @@ function generateTable(originalPath, revisedPath, nodes) {
             row.appendChild(document.createElement('td'));
             row.appendChild(document.createElement('td'));
         }
+        
+        // Add hover effect for rows except the first row
+        if (i > 0) {
+            row.addEventListener('mouseover', () => {
+                Array.from(tbody.children).forEach(tr => {
+                    if (tr !== row) {
+                        tr.style.opacity = '0.5';
+                    }
+                });
+                // Highlight the edges corresponding to this row
+                const originalRef = originalPath[i];
+                const revisedRef = revisedPath[i];
+                highlightEdges(originalRef, revisedRef, nodes, originalEdges, revisedEdges, projection, g);
+            });
+
+            row.addEventListener('mouseout', () => {
+                Array.from(tbody.children).forEach(tr => {
+                    tr.style.opacity = '1';
+                });
+                // Reset edges highlighting
+                resetEdgesHighlighting(g);
+            });
+        }
 
         tbody.appendChild(row);
     }
@@ -392,6 +405,100 @@ function generateTable(originalPath, revisedPath, nodes) {
     table.appendChild(tbody);
 
     return table;
+}
+
+function highlightEdges(originalRef, revisedRef, nodes, originalEdges, revisedEdges, projection, g) {
+    const originalCoord = [nodes[originalRef].lat, nodes[originalRef].lng];
+    const revisedCoord = [nodes[revisedRef].lat, nodes[revisedRef].lng];
+
+    const originalEdge = originalEdges.find(edge => 
+        (edge.lat2 === originalCoord[0] && edge.lng2 === originalCoord[1])
+    );
+
+    const revisedEdge = revisedEdges.find(edge => 
+        (edge.lat2 === revisedCoord[0] && edge.lng2 === revisedCoord[1])
+    );
+
+    g.selectAll('.original').transition().duration(200).style('opacity', function() {
+        const lat2 = +this.getAttribute('data-lat2');
+        const lng2 = +this.getAttribute('data-lng2');
+        return (lat2 === originalCoord[0] && lng2 === originalCoord[1]) ? 1 : 0.1;
+    });
+
+    g.selectAll('.revised').transition().duration(200).style('opacity', function() {
+        const lat2 = +this.getAttribute('data-lat2');
+        const lng2 = +this.getAttribute('data-lng2');
+        return (lat2 === revisedCoord[0] && lng2 === revisedCoord[1]) ? 1 : 0.1;
+    });
+
+    // Reposition map to fit both original and revised edges
+    const bounds = getBounds([originalEdge, revisedEdge], projection);
+    console.log('bounds', bounds)
+    const [[x0, y0], [x1, y1]] = bounds;
+    const width = x1 - x0;
+    const height = y1 - y0;
+    const centerX = (x0 + x1) / 2;
+    const centerY = (y0 + y1) / 2;
+    const scale = Math.min(700 / width, 700 / height) * 0.9; // Scale down slightly to fit within the viewbox
+    const translate = [700 / 2 - scale * centerX, 700 / 2 - scale * centerY];
+
+    // Update zoom
+    applyZoom(g, translate, scale);
+}
+
+function resetEdgesHighlighting(g) {
+    g.selectAll('.original').transition().duration(200).style('opacity', 1);
+    g.selectAll('.revised').transition().duration(200).style('opacity', 1);
+}
+
+function getBounds(edges, projection) {
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    edges.forEach(edge => {
+        if (edge) {
+            const coords = [[edge.lng1, edge.lat1], [edge.lng2, edge.lat2]];
+            coords.forEach(([lng, lat]) => {
+                const [x, y] = projection([lng, lat]);
+                if (x < x0) x0 = x;
+                if (x > x1) x1 = x;
+                if (y < y0) y0 = y;
+                if (y > y1) y1 = y;
+            });
+        }
+    });
+    return [[x0, y0], [x1, y1]];
+}
+
+function applyZoom(svg) {
+    const zoom = d3.zoom().on('zoom', (event) => {
+        svg.select('g').attr('transform', event.transform);
+        svg.selectAll('.land').style('stroke-width', `${1 / event.transform.k}px`);
+        svg.selectAll('.border').style('stroke-width', `${1.5 / event.transform.k}px`);
+        svg.selectAll('.circuit').attr('r', 3 / event.transform.k);
+        svg.selectAll('.circuit-label').style('font-size', `${12 / event.transform.k}px`);
+        svg.selectAll('.distance-label').style('font-size', `${12 / event.transform.k}px`);
+        svg.selectAll('.arrow').attr('refX', 10 / event.transform.k)
+                               .attr('markerWidth', 4 / event.transform.k)
+                               .attr('markerHeight', 4 / event.transform.k);
+    });
+
+    svg.call(zoom);
+}
+
+// const zoom = d3.zoom().on('zoom', (event) => {
+//     g.attr('transform', event.transform);
+//     g.selectAll('.land').style('stroke-width', `${1 / event.transform.k}px`);
+//     g.selectAll('.border').style('stroke-width', `${1.5 / event.transform.k}px`);
+//     g.selectAll('.circuit').attr('r', 3 / event.transform.k);
+//     g.selectAll('.circuit-label').style('font-size', `${12 / event.transform.k}px`);
+//     g.selectAll('.distance-label').style('font-size', `${12 / event.transform.k}px`);
+//     g.selectAll('.arrow').attr('refX', 10 / event.transform.k)
+//                         .attr('markerWidth', 4 / event.transform.k)
+//                         .attr('markerHeight', 4 / event.transform.k);
+// });
+
+function applyZoom(g, translate, scale) {
+    g.transition().duration(2000).attr('transform', `translate(${translate})scale(${scale})`);
+    
 }
 
 function getContinentColor(continent) {

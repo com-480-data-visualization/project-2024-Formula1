@@ -239,7 +239,8 @@ header {
     width: 100%;
     max-width: var(--max-width-desktop);
     margin: 0 auto 2rem;
-    padding: 0 5rem 0 2rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
     text-align: left;
 }
 
@@ -322,12 +323,12 @@ line.vertical, line.horizontal {
     gap: 2rem;
 }
 
-.top-3 {
+/* .top-3 {
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin: 0 20px;
-}
+    margin: 0 0;
+} */
 
 .top-3 .points {
     font-family: 'Formula1 Display-Bold';
@@ -335,9 +336,12 @@ line.vertical, line.horizontal {
     font-weight: bold;
 }
 
-.top-3 div {
+.top-3 {
     font-family: 'Formula1 Regular';
     font-size: 1rem;
+    display: flex;
+    justify-content: start;
+    padding: 0;
 }
 
 #main-container {
@@ -403,6 +407,11 @@ line.vertical, line.horizontal {
     padding-left: 10px;
 }
 
+.calendar-table tr {
+    transition: opacity 0.3s ease;
+    border: 1px solid transparent;
+}
+
 #header-container {
     width: 1100px;
     display: flex;
@@ -444,4 +453,10 @@ line.vertical, line.horizontal {
     font-family: "Formula1 Display-Bold";
     font-size: 1.5rem;
     color: #ffffff;
+}
+
+.name-label {
+    color: var(--f1-red);
+    /* font-weight: bold; */
+    margin-bottom: 5px;
 }

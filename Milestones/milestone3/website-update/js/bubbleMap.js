@@ -195,13 +195,15 @@ function createStackedBarChart(data, circles) {
 }
 
 function createStackedAreaChart(data, circles) {
-    const widthAreaChart = bmapWidth;
-    const heightAreaChart = 100;
+    const marginAreaChart = {top: 10, right: 0, bottom: 30, left: 30};
+    const widthAreaChart = bmapWidth - marginAreaChart.left - marginAreaChart.right;
+    const heightAreaChart = 150 - marginAreaChart.top - marginAreaChart.bottom;
 
     const areaSvg = d3.select("#area-chart").append("svg")
-        .attr("width", widthAreaChart)
-        .attr("height", heightAreaChart)
-        .append("g");
+        .attr("width", widthAreaChart + marginAreaChart.left + marginAreaChart.right)
+        .attr("height", heightAreaChart + marginAreaChart.top + marginAreaChart.bottom)
+        .append("g")
+        .attr("transform", `translate(${marginAreaChart.left},${marginAreaChart.top})`);
 
     // Define the order of keys
     const orderedKeys = ['Europe', 'North America', 'Asia', 'South America', 'Oceania', 'Africa'];
@@ -232,6 +234,21 @@ function createStackedAreaChart(data, circles) {
 
     const series = stack(data);
 
+    // Add gridlines behind the areas
+    // areaSvg.append("g")
+    //     .attr("class", "grid")
+    //     .attr("transform", `translate(0,${heightAreaChart})`)
+    //     .call(d3.axisBottom(x).ticks(5).tickSize(-heightAreaChart).tickFormat(''))
+    //     .selectAll("line")
+    //     .style("stroke", "gray"); // Set the stroke color to gray
+
+    // areaSvg.append("g")
+    //     .attr("class", "grid")
+    //     .call(d3.axisLeft(y).ticks(5).tickSize(-widthAreaChart).tickFormat(''))
+    //     .selectAll("line")
+    //     .style("stroke", "gray"); // Set the stroke color to gray
+
+    // Append the areas
     areaSvg.selectAll("path")
         .data(series)
         .enter().append("path")
@@ -251,29 +268,54 @@ function createStackedAreaChart(data, circles) {
             // Highlight the corresponding area
             areaSvg.selectAll(".area").transition().duration(100).style("opacity", 0.2);
             d3.select(event.target).transition().duration(100).style("opacity", 0.8);
+
+            // Highlight the corresponding bar and label
+            d3.select("#bar-chart").selectAll(".bar, .label").transition().duration(100).style("opacity", 0.2);
+            d3.select("#bar-chart").selectAll(`.bar-${continent.replace(/\s+/g, '-')}, .label-${continent.replace(/\s+/g, '-')}`)
+                .transition().duration(100).style("opacity", 0.8);
         })
         .on("mouseout", d => {
             areaSvg.selectAll("path").transition().duration(100).style("opacity", 0.8);
             circles.transition().duration(100).style("opacity", 0.8);
+            barSvg.selectAll(".bar, .label").transition().duration(100).style("opacity", 0.8);
         });
 
     areaSvg.append("g")
         .attr("transform", `translate(0,${heightAreaChart})`)
-        .call(d3.axisBottom(x).ticks(5))
+        .call(d3.axisBottom(x).ticks(5).tickPadding(10))
         .selectAll("text")
-        .style("fill", "white");
+        .style("fill", "white"); // Ensure tick labels are white
 
     areaSvg.append("g")
-        .call(d3.axisLeft(y))
+        .call(d3.axisLeft(y).ticks(5).tickPadding(10))
         .selectAll("text")
-        .style("fill", "white");
+        .style("fill", "white"); // Ensure tick labels are white
 
-    areaSvg.selectAll(".tick line")
+    // Ensure the color of the ticks
+    areaSvg.selectAll(".tick text")
+        .style("fill", "white"); // Set the text color to white
+
+    // Customize the axes to only show white lines on the left and bottom
+    areaSvg.selectAll(".domain")
+        .style("stroke", "none"); // Remove all domain lines
+
+    // Add left axis line manually
+    areaSvg.append("line")
+        .attr("x1", 0)
+        .attr("y1", 0)
+        .attr("x2", 0)
+        .attr("y2", heightAreaChart)
         .style("stroke", "white");
 
-    areaSvg.selectAll(".domain")
+    // Add bottom axis line manually
+    areaSvg.append("line")
+        .attr("x1", 0)
+        .attr("y1", heightAreaChart)
+        .attr("x2", widthAreaChart)
+        .attr("y2", heightAreaChart)
         .style("stroke", "white");
 }
+
 
 // Fetch and process the data for the stacked area chart
 function fetchAndProcessAreaChartData(circles) {
