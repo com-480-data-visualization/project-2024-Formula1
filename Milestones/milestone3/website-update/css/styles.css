@@ -292,6 +292,34 @@ header {
     pointer-events: none;
 }
 
+.infoButtons {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    padding: 5px;
+    font: 12px sans-serif;
+    background: rgba(155, 155, 155, 0.749);
+    border: 1px solid #580000;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+#info {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    padding: 1px;
+    font: 12px sans-serif;
+    background: var('--f1-red');
+    border: 1px solid #580000;
+    border-radius: 10px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
 .country-label {
     pointer-events: none;
     fill: #333;

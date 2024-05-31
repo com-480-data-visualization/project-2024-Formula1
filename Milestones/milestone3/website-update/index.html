@@ -64,9 +64,12 @@
                         <!-- Add more metrics as needed -->
                     </select>
                 </div>
+                <div class="select-wrapper">
+                </div>
             </div>
             <svg id="racing-bar-chart" width="1100" height="600"></svg>
             <script src="js/barRace.js"></script>
+            <script src="js/tooltip.js"></script>
         </div>
         <div>
             <div class="text-wrapper">
@@ -105,7 +108,7 @@
                 <select id="points-system-select"></select>
             </div>
             <div>
-                <h4>Championship Outcome</h4>
+                <h4>Championship Outcome &nbsp; <button class="tooltip_infoButtons" data-tooltip="lorem ipse" style="border-radius: 10px; padding: 1px; width: 20px; background-color: #e10801; border: 1px; border-color: white;">i</button></h4>
                 <div id="top-3-container" class="top-3-container"></div>
                 <h4>Championship Point Accumulation</h4>
                 <div id="linechart-container"></div>
@@ -148,6 +151,9 @@
                     <div class="metric-label">Reduced CO2</div>
                     <div id="reduced-co2" class="metric-value">16.3 ton</div>
                 </div>
+                <div class="metric">
+                    <div class="metric-label"><button class="tooltip_infoButtons" data-tooltip="lorem ipse" style="border-radius: 10px; padding: 1px; width: 20px; background-color: #e10801; border: 1px; border-color: white;">i</button></div>
+
             </div>
         </div>
         <!-- <div id="map"></div> -->
