@@ -107,7 +107,11 @@ function updateMap(data) {
 
     }).catch(error => console.error('Error loading map data:', error));
 
-    const zoom = d3.zoom().on('zoom', (event) => {
+    const minZoom = 0.5;
+    const maxZoom = 10;
+    const zoom = d3.zoom()
+    .scaleExtent([minZoom, maxZoom]) // Set the minimum and maximum zoom level
+    .on('zoom', (event) => {
         g.attr('transform', event.transform);
         g.selectAll('.land').style('stroke-width', `${1 / event.transform.k}px`);
         g.selectAll('.border').style('stroke-width', `${1.5 / event.transform.k}px`);
@@ -120,6 +124,14 @@ function updateMap(data) {
     });
 
     svg.call(zoom);
+
+    // Prevent page scrolling when the zoom level is at the minimum or at the maximum
+    bmapSvg.on("wheel", function(event) {
+    const transform = d3.zoomTransform(bmapSvg.node());
+    if ((transform.k <= minZoom && event.deltaY > 0) || (transform.k >= maxZoom && event.deltaY < 0)) {
+        event.preventDefault();
+    }
+    });
 
     applyZoom(svg);
 }

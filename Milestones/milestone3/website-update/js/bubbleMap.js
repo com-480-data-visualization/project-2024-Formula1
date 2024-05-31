@@ -30,7 +30,7 @@ const tooltip = d3.select("body").append("div")
     .style("opacity", 0);
 
 const zoom = d3.zoom()
-    .scaleExtent([minZoom, maxZoom]) // Set the minimum zoom level
+    .scaleExtent([minZoom, maxZoom]) // Set the minimum and maximum zoom level
     .on("zoom", function (event) {
         gBmap.attr("transform", event.transform);
         gBmap.selectAll("circle").attr("r", d => Math.sqrt(d.races) * 2 / event.transform.k);
