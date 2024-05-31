@@ -246,20 +246,6 @@ function createStackedAreaChart(data, circles) {
 
     const series = stack(data);
 
-    // Add gridlines behind the areas
-    // areaSvg.append("g")
-    //     .attr("class", "grid")
-    //     .attr("transform", `translate(0,${heightAreaChart})`)
-    //     .call(d3.axisBottom(x).ticks(5).tickSize(-heightAreaChart).tickFormat(''))
-    //     .selectAll("line")
-    //     .style("stroke", "gray"); // Set the stroke color to gray
-
-    // areaSvg.append("g")
-    //     .attr("class", "grid")
-    //     .call(d3.axisLeft(y).ticks(5).tickSize(-widthAreaChart).tickFormat(''))
-    //     .selectAll("line")
-    //     .style("stroke", "gray"); // Set the stroke color to gray
-
     // Append the areas
     areaSvg.selectAll("path")
         .data(series)

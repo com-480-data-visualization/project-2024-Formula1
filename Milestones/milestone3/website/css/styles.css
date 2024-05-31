@@ -234,11 +234,13 @@ header {
     color: var(--white);
     text-align: center;
     z-index: 1;
-    width: 100%;
+    width: 90%;
     max-width: var(--max-width-desktop); /* Ensure the content doesn't grow too wide on large screens */
     padding: 0 20px;
+    opacity: 0;
     /*letter-spacing: .2rem; */
 }
+
 
 /* Central container for contenpt */
 /* .container {
