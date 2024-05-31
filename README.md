@@ -6,6 +6,9 @@
 🏁 Hans Kristian Bjørgo Kværum &#8195; &#8195; [381875] <br>
 🏁 Riccardo Lionetto&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;[370934] <br>
 
+### ✅ Live prototype
+The final live prototype can be found at this link: [website](https://formula1viz.altervista.org/index.html)
+
 ### 📍 Milestones
 <b>Milestone 1:</b> Proposal <br>
 In the folder [milestones](/Milestones), the [proposal](/Milestones/milestone1/Milestone1.md) can be found in its markdown version together with a [Jupiter Notebook](/Milestones/milestone1/exploratory_analysis-milestone-1.ipynb) containing the pre-processing scripts.
@@ -19,4 +22,7 @@ The Figma prototype will be used as foundation and reference for the final websi
 An additional file containing the code used to generate the plot was uploaded too: [folder](/Milestones/milestone2/milestone2-dataprep.ipynb)  
 
 
-<b>Milestone 3:</b> (31st May, 5pm)
+<b>Milestone 3:</b>
+- A screencast shows live interactions with the visualizations: [video]()
+- A process book shows the design process moving from ideas to sketches, and from a high fidelity prototype to a final web version: [process book]()
+- The final live prototype can be found at this link: [website](https://formula1viz.altervista.org/index.html)
